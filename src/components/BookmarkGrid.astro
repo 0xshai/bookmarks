@@ -1,36 +1,22 @@
----
-import { bookmarks } from '../data/bookmarks';
-const { category } = Astro.props;
-const cat = bookmarks.find(c => c.category === category);
----
-
-{cat && (
-  <div class="bookmark-section">
-    <p class="section-heading">{cat.category}</p>
-    <div class="bookmark-grid">
-      {cat.items.map((item) => (
-        <div class="card-wrap">
-          <a href={item.url} target="_blank" rel="noopener noreferrer" class="bookmark-card">
-            <div class="card-header">
-              <span class="card-name">{item.name}</span>
-              {item.opensource && <span class="badge-oss">开源</span>}
-            </div>
-            <p class="card-desc">{item.desc}</p>
-          </a>
-          <div class="card-tooltip">{item.desc}</div>
-        </div>
-      ))}
-    </div>
-  </div>
-)}
-
 <script>
-  document.querySelectorAll<HTMLElement>('.card-wrap').forEach(wrap => {
-    const desc = wrap.querySelector<HTMLElement>('.card-desc');
-    const tooltip = wrap.querySelector<HTMLElement>('.card-tooltip');
-    if (!desc || !tooltip) return;
-    if (desc.scrollHeight <= desc.clientHeight + 1) {
-      tooltip.dataset.hidden = 'true';
-    }
-  });
+  function checkTooltips() {
+    document.querySelectorAll<HTMLElement>('.card-wrap').forEach(wrap => {
+      const desc = wrap.querySelector<HTMLElement>('.card-desc');
+      const tooltip = wrap.querySelector<HTMLElement>('.card-tooltip');
+      if (!desc || !tooltip) return;
+      // 没有溢出（scrollHeight 不超过 clientHeight）则隐藏浮窗
+      if (desc.scrollHeight <= desc.clientHeight + 2) {
+        tooltip.dataset.hidden = 'true';
+      } else {
+        delete tooltip.dataset.hidden;
+      }
+    });
+  }
+
+  // 等字体加载完再判断，避免字体未渲染时尺寸不准
+  if (document.fonts) {
+    document.fonts.ready.then(checkTooltips);
+  } else {
+    window.addEventListener('load', checkTooltips);
+  }
 </script>

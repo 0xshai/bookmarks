@@ -132,22 +132,23 @@ site-search { display: none; }
 .sl-markdown-content a { color: var(--cg-ink); text-underline-offset: 3px; }
 
 /* MDX 的 ## 标题只用于生成 TOC 锚点，不显示 */
+
 .sl-markdown-content h2 {
-  margin: 0;
-  padding: 0;
-  font-size: 0;
-  line-height: 0;
-  height: 0;
-  overflow: hidden;
-  border: none;
-  /* 隐藏锚点图标 */
-  anchor-name: none;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  border: none !important;
+  position: relative !important;
+  visibility: hidden !important;
 }
 
-/* 锚点图标彻底隐藏 */
-.sl-markdown-content h2 a {
-  display: none;
+.sl-markdown-content h2 * {
+  display: none !important;
 }
+
 /* ---- Content centering ---- */
 @media (min-width: 72rem) {
   .main-pane { --sl-content-margin-inline: auto; }
