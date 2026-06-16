@@ -1,259 +1,321 @@
-@import '@fontsource-variable/archivo';
-@import '@fontsource/ibm-plex-mono/400.css';
-@import '@fontsource/ibm-plex-mono/500.css';
-@import '@fontsource/ibm-plex-mono/600.css';
+:root {
+  color-scheme: light;
+}
+@import "@fontsource-variable/archivo";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "@fontsource/ibm-plex-mono/600.css";
 
 /* ---- Fonts ---- */
 :root {
-  --sl-font: 'Archivo Variable', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  --sl-font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    --sl-font:
+        "Archivo Variable", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+        Arial, sans-serif;
+    --sl-font-mono:
+        "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 }
 
 /* ---- Light / paper ---- */
 :root,
-:root[data-theme='light'] {
-  --sl-color-accent-low:       #e2dfd5;
-  --sl-color-accent:           #16150f;
-  --sl-color-accent-high:      #16150f;
-  --sl-color-white:            #16150f;
-  --sl-color-gray-1:           #2a281f;
-  --sl-color-gray-2:           #56544a;
-  --sl-color-gray-3:           #6f6c61;
-  --sl-color-gray-4:           #87847a;
-  --sl-color-gray-5:           #b4b1a5;
-  --sl-color-gray-6:           #d6d3c8;
-  --sl-color-gray-7:           #e8e6dd;
-  --sl-color-black:            #f7f6f2;
-  --sl-color-bg:               #f7f6f2;
-  --sl-color-bg-nav:           #f7f6f2;
-  --sl-color-bg-sidebar:       #f7f6f2;
-  --sl-color-bg-inline-code:   #e8e6dd;
-  --sl-color-bg-accent:        #16150f;
-  --sl-color-text:             #16150f;
-  --sl-color-text-accent:      #16150f;
-  --sl-color-text-invert:      #f7f6f2;
-  --sl-color-hairline:         #16150f;
-  --sl-color-hairline-light:   #d6d3c8;
-  --sl-color-hairline-shade:   #d6d3c8;
-  --cg-paper:                  #f7f6f2;
-  --cg-paper-2:                #f1efe8;
-  --cg-paper-press:            #e8e6dd;
-  --cg-ink:                    #16150f;
-  --cg-ink-2:                  #56544a;
-  --cg-ink-3:                  #87847a;
-  --cg-rule:                   #16150f;
-  --cg-rule-soft:              #d6d3c8;
+:root[data-theme="light"] {
+    --sl-color-accent-low: #e2dfd5;
+    --sl-color-accent: #16150f;
+    --sl-color-accent-high: #16150f;
+    --sl-color-white: #16150f;
+    --sl-color-gray-1: #2a281f;
+    --sl-color-gray-2: #56544a;
+    --sl-color-gray-3: #6f6c61;
+    --sl-color-gray-4: #87847a;
+    --sl-color-gray-5: #b4b1a5;
+    --sl-color-gray-6: #d6d3c8;
+    --sl-color-gray-7: #e8e6dd;
+    --sl-color-black: #f7f6f2;
+    --sl-color-bg: #f7f6f2;
+    --sl-color-bg-nav: #f7f6f2;
+    --sl-color-bg-sidebar: #f7f6f2;
+    --sl-color-bg-inline-code: #e8e6dd;
+    --sl-color-bg-accent: #16150f;
+    --sl-color-text: #16150f;
+    --sl-color-text-accent: #16150f;
+    --sl-color-text-invert: #f7f6f2;
+    --sl-color-hairline: #16150f;
+    --sl-color-hairline-light: #d6d3c8;
+    --sl-color-hairline-shade: #d6d3c8;
+    --cg-paper: #f7f6f2;
+    --cg-paper-2: #f1efe8;
+    --cg-paper-press: #e8e6dd;
+    --cg-ink: #16150f;
+    --cg-ink-2: #56544a;
+    --cg-ink-3: #87847a;
+    --cg-rule: #16150f;
+    --cg-rule-soft: #d6d3c8;
 }
 
 /* ---- Dark / ink ---- */
-:root[data-theme='dark'] {
-  --sl-color-accent-low:       #34322a;
-  --sl-color-accent:           #f3f1ea;
-  --sl-color-accent-high:      #f3f1ea;
-  --sl-color-white:            #f3f1ea;
-  --sl-color-gray-1:           #e7e5dc;
-  --sl-color-gray-2:           #c9c6ba;
-  --sl-color-gray-3:           #a7a499;
-  --sl-color-gray-4:           #7c7a70;
-  --sl-color-gray-5:           #57554c;
-  --sl-color-gray-6:           #2c2a23;
-  --sl-color-gray-7:           #1e1c16;
-  --sl-color-black:            #16150f;
-  --sl-color-bg:               #16150f;
-  --sl-color-bg-nav:           #16150f;
-  --sl-color-bg-sidebar:       #16150f;
-  --sl-color-bg-inline-code:   #23211a;
-  --sl-color-bg-accent:        #f3f1ea;
-  --sl-color-text:             #f3f1ea;
-  --sl-color-text-accent:      #f3f1ea;
-  --sl-color-text-invert:      #16150f;
-  --sl-color-hairline:         #f3f1ea;
-  --sl-color-hairline-light:   #34322a;
-  --sl-color-hairline-shade:   #34322a;
-  --cg-paper:                  #16150f;
-  --cg-paper-2:                #1e1c16;
-  --cg-paper-press:            #23211a;
-  --cg-ink:                    #f3f1ea;
-  --cg-ink-2:                  #b8b5a8;
-  --cg-ink-3:                  #87847a;
-  --cg-rule:                   #f3f1ea;
-  --cg-rule-soft:              #34322a;
+:root[data-theme="dark"] {
+    --sl-color-accent-low: #34322a;
+    --sl-color-accent: #f3f1ea;
+    --sl-color-accent-high: #f3f1ea;
+    --sl-color-white: #f3f1ea;
+    --sl-color-gray-1: #e7e5dc;
+    --sl-color-gray-2: #c9c6ba;
+    --sl-color-gray-3: #a7a499;
+    --sl-color-gray-4: #7c7a70;
+    --sl-color-gray-5: #57554c;
+    --sl-color-gray-6: #2c2a23;
+    --sl-color-gray-7: #1e1c16;
+    --sl-color-black: #16150f;
+    --sl-color-bg: #16150f;
+    --sl-color-bg-nav: #16150f;
+    --sl-color-bg-sidebar: #16150f;
+    --sl-color-bg-inline-code: #23211a;
+    --sl-color-bg-accent: #f3f1ea;
+    --sl-color-text: #f3f1ea;
+    --sl-color-text-accent: #f3f1ea;
+    --sl-color-text-invert: #16150f;
+    --sl-color-hairline: #f3f1ea;
+    --sl-color-hairline-light: #34322a;
+    --sl-color-hairline-shade: #34322a;
+    --cg-paper: #16150f;
+    --cg-paper-2: #1e1c16;
+    --cg-paper-press: #23211a;
+    --cg-ink: #f3f1ea;
+    --cg-ink-2: #b8b5a8;
+    --cg-ink-3: #87847a;
+    --cg-rule: #f3f1ea;
+    --cg-rule-soft: #34322a;
 }
 
 /* ---- Global flat resets ---- */
-*, *::before, *::after { border-radius: 0 !important; }
-:root { --sl-shadow-sm: none; --sl-shadow-md: none; --sl-shadow-lg: none; }
-body { background: var(--cg-paper); color: var(--cg-ink); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-:where(h1, h2, h3, h4, h5) { letter-spacing: -0.02em; }
+*,
+*::before,
+*::after {
+    border-radius: 0 !important;
+}
+:root {
+    --sl-shadow-sm: none;
+    --sl-shadow-md: none;
+    --sl-shadow-lg: none;
+}
+body {
+    background: var(--cg-paper);
+    color: var(--cg-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+:where(h1, h2, h3, h4, h5) {
+    letter-spacing: -0.02em;
+}
 
 /* ---- Header ---- */
-.header { background: var(--cg-paper); -webkit-backdrop-filter: none; backdrop-filter: none; }
-header.header { border-bottom: 1px solid var(--cg-rule); }
-.header .header { border-bottom: 0; }
+.header {
+    background: var(--cg-paper);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+}
+header.header {
+    border-bottom: 1px solid var(--cg-rule);
+}
+.header .header {
+    border-bottom: 0;
+}
 
 /* ---- Sidebar ---- */
-#starlight__sidebar, .sidebar-pane {
-  border-inline-end: 1px solid var(--cg-rule);
-  background: var(--cg-paper);
+#starlight__sidebar,
+.sidebar-pane {
+    border-inline-end: 1px solid var(--cg-rule);
+    background: var(--cg-paper);
 }
 .sidebar-content details > summary,
 .sidebar-content > ul > li > span,
 .sidebar-content .large {
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
-  color: var(--cg-ink-2);
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    color: var(--cg-ink-2);
 }
-.sidebar-content a { color: var(--cg-ink-2); }
-.sidebar-content a:hover { background: var(--cg-paper-press); color: var(--cg-ink); }
-.sidebar-content a[aria-current='page'],
-.sidebar-content a[aria-current='page']:hover {
-  background: transparent;
-  color: var(--cg-ink);
-  font-weight: 700;
-  border-inline-start: 2px solid var(--cg-ink);
+.sidebar-content a {
+    color: var(--cg-ink-2);
+}
+.sidebar-content a:hover {
+    background: var(--cg-paper-press);
+    color: var(--cg-ink);
+}
+.sidebar-content a[aria-current="page"],
+.sidebar-content a[aria-current="page"]:hover {
+    background: transparent;
+    color: var(--cg-ink);
+    font-weight: 700;
+    border-inline-start: 2px solid var(--cg-ink);
 }
 
 /* ---- Right TOC ---- */
-starlight-toc a { color: var(--cg-ink-3); }
-starlight-toc a[aria-current='true'] { color: var(--cg-ink); font-weight: 600; }
+starlight-toc a {
+    color: var(--cg-ink-3);
+}
+starlight-toc a[aria-current="true"] {
+    color: var(--cg-ink);
+    font-weight: 600;
+}
 
 /* ---- Pagination ---- */
-.pagination-links a { border: 1px solid var(--cg-rule); box-shadow: none; background: var(--cg-paper); }
-.pagination-links a:hover { background: var(--cg-paper-press); }
+.pagination-links a {
+    border: 1px solid var(--cg-rule);
+    box-shadow: none;
+    background: var(--cg-paper);
+}
+.pagination-links a:hover {
+    background: var(--cg-paper-press);
+}
 
 /* ---- Search ---- */
-button[data-open-modal] { border: 1px solid var(--cg-rule); background: var(--cg-paper); }
-site-search { display: none; }
+button[data-open-modal] {
+    border: 1px solid var(--cg-rule);
+    background: var(--cg-paper);
+}
 
 /* ---- Prose ---- */
-.sl-markdown-content hr { border: 0; border-top: 1px solid var(--cg-rule); }
-.sl-markdown-content a { color: var(--cg-ink); text-underline-offset: 3px; }
+.sl-markdown-content hr {
+    border: 0;
+    border-top: 1px solid var(--cg-rule);
+}
+.sl-markdown-content a {
+    color: var(--cg-ink);
+    text-underline-offset: 3px;
+}
 
 /* MDX 的 ## 标题只用于生成 TOC 锚点，不显示 */
 
 /* 隐藏 h2 wrapper（含锚点图标）但保留锚点位置供 TOC 跳转 */
 
 .sl-heading-wrapper.level-h2 {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0,0,0,0) !important;
-  white-space: nowrap !important;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
 }
 
 /* 隐藏右侧 TOC 第一条"概述" */
 starlight-toc a[href="#_top"] {
-  display: none !important;
+    display: none !important;
 }
 
 /* ---- Content centering ---- */
 @media (min-width: 72rem) {
-  .main-pane { --sl-content-margin-inline: auto; }
+    .main-pane {
+        --sl-content-margin-inline: auto;
+    }
 }
 
 /* ================================================================
    书签卡片
    ================================================================ */
 
-.bookmark-section { margin-bottom: 3rem; }
+.bookmark-section {
+    margin-bottom: 3rem;
+}
 
 /* 分类标题：小型大写，用 <p> 标签所以不受 h2 display:none 影响 */
 .section-heading {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--cg-ink-2);
-  margin: 0 0 0.75rem;
-  padding: 0;
-  border: none;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--cg-ink-2);
+    margin: 0 0 0.75rem;
+    padding: 0;
+    border: none;
 }
 
 .bookmark-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0;
 }
 
 .card-wrap {
-  position: relative;
-  margin: -1px 0 0 -1px;
+    position: relative;
+    margin: -1px 0 0 -1px;
 }
 
 .bookmark-card {
-  display: flex;
-  flex-direction: column;
-  padding: 0.75rem 0.9rem;
-  background: var(--cg-paper);
-  border: 1px solid var(--cg-rule);
-  text-decoration: none;
-  transition: background 0.12s;
-  overflow: hidden;
-  height: 86px;
-  box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem 0.9rem;
+    background: var(--cg-paper);
+    border: 1px solid var(--cg-rule);
+    text-decoration: none;
+    transition: background 0.12s;
+    overflow: hidden;
+    height: 86px;
+    box-sizing: border-box;
 }
-.bookmark-card:hover { background: var(--cg-paper-press); }
+.bookmark-card:hover {
+    background: var(--cg-paper-press);
+}
 
 .card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.4rem;
-  flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem;
+    flex-shrink: 0;
 }
 
 .card-name {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--cg-ink);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--cg-ink);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .badge-oss {
-  flex-shrink: 0;
-  font-size: 0.58rem;
-  font-weight: 700;
-  padding: 0.1rem 0.3rem;
-  background: transparent;
-  color: var(--cg-ink-3);
-  border: 1px solid var(--cg-rule-soft);
-  letter-spacing: 0.08em;
+    flex-shrink: 0;
+    font-size: 0.58rem;
+    font-weight: 700;
+    padding: 0.1rem 0.3rem;
+    background: transparent;
+    color: var(--cg-ink-3);
+    border: 1px solid var(--cg-rule-soft);
+    letter-spacing: 0.08em;
 }
 
 .card-desc {
-  font-size: 0.75rem;
-  color: var(--cg-ink-2);
-  line-height: 1.45;
-  margin: 0.35rem 0 0;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+    font-size: 0.75rem;
+    color: var(--cg-ink-2);
+    line-height: 1.45;
+    margin: 0.35rem 0 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 /* 浮窗：默认显示，JS 判断不溢出时隐藏 */
 .card-tooltip {
-  position: absolute;
-  bottom: calc(100% + 4px);
-  left: 0;
-  width: max-content;
-  max-width: 240px;
-  padding: 0.5rem 0.75rem;
-  background: var(--cg-ink);
-  color: var(--cg-paper);
-  font-size: 0.75rem;
-  line-height: 1.55;
-  z-index: 200;
-  pointer-events: none;
-  white-space: normal;
-  /* 默认隐藏，hover 时显示；JS 会对不溢出的加 data-hidden 彻底隐藏 */
-  display: none;
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 0;
+    width: max-content;
+    max-width: 240px;
+    padding: 0.5rem 0.75rem;
+    background: var(--cg-ink);
+    color: var(--cg-paper);
+    font-size: 0.75rem;
+    line-height: 1.55;
+    z-index: 200;
+    pointer-events: none;
+    white-space: normal;
+    /* 默认隐藏，hover 时显示；JS 会对不溢出的加 data-hidden 彻底隐藏 */
+    display: none;
 }
-.card-wrap:hover .card-tooltip:not([data-hidden]) { display: block; }
+.card-wrap:hover .card-tooltip:not([data-hidden]) {
+    display: block;
+}
