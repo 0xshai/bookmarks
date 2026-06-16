@@ -132,7 +132,15 @@ site-search { display: none; }
 .sl-markdown-content a { color: var(--cg-ink); text-underline-offset: 3px; }
 
 /* MDX 的 ## 标题只用于生成 TOC 锚点，不显示 */
-.sl-markdown-content h2 { display: none; }
+.sl-markdown-content h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+  overflow: hidden;
+  border: none;
+}
 
 /* ---- Content centering ---- */
 @media (min-width: 72rem) {
