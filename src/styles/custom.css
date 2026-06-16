@@ -133,19 +133,21 @@ site-search { display: none; }
 
 /* MDX 的 ## 标题只用于生成 TOC 锚点，不显示 */
 
-.sl-markdown-content h2 {
-  margin: 0 !important;
+/* 隐藏 h2 wrapper（含锚点图标）但保留锚点位置供 TOC 跳转 */
+
+.sl-heading-wrapper.level-h2 {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
   padding: 0 !important;
-  font-size: 0 !important;
-  line-height: 0 !important;
-  height: 0 !important;
+  margin: -1px !important;
   overflow: hidden !important;
-  border: none !important;
-  position: relative !important;
-  visibility: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  white-space: nowrap !important;
 }
 
-.sl-markdown-content h2 * {
+/* 隐藏右侧 TOC 第一条"概述" */
+starlight-toc a[href="#_top"] {
   display: none !important;
 }
 
@@ -192,7 +194,7 @@ site-search { display: none; }
   text-decoration: none;
   transition: background 0.12s;
   overflow: hidden;
-  height: 85px;
+  height: 86px;
   box-sizing: border-box;
 }
 .bookmark-card:hover { background: var(--cg-paper-press); }
