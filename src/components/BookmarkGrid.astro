@@ -1,12 +1,47 @@
 ---
 import { bookmarks } from '../data/bookmarks';
+import {
+  Code2, Globe, Image, Download, Video, Play, Pencil, Settings,
+  Languages, RefreshCw, Keyboard, Mail, Lock, KeyRound, FileText,
+  NotebookPen, Cloud, Zap, BookOpen, Cpu, Brain
+} from 'lucide-astro';
+
 const { category } = Astro.props;
 const cat = bookmarks.find(c => c.category === category);
+
+const iconMap: Record<string, any> = {
+  '编程工具': Code2,
+  '浏览器': Globe,
+  '图像处理': Image,
+  '下载工具': Download,
+  '视频处理': Video,
+  '视频播放': Play,
+  '设计': Pencil,
+  '系统工具': Settings,
+  '翻译工具': Languages,
+  '文件同步': RefreshCw,
+  '输入法': Keyboard,
+  '邮箱': Mail,
+  '密码管理': Lock,
+  '双因素认证': KeyRound,
+  '办公': FileText,
+  '笔记': NotebookPen,
+  '加密云盘': Cloud,
+  '效率工具': Zap,
+  '学习工具': BookOpen,
+  '本地 AI': Cpu,
+  'AI 工具': Brain,
+};
+
+const Icon = cat ? iconMap[cat.category] : null;
 ---
 
 {cat && (
   <div class="bookmark-section">
-    <p class="section-heading">{cat.category}</p>
+    <p class="section-heading">
+      {Icon && <Icon size={13} stroke-width={2} />}
+      {cat.category}
+    </p>
     <div class="bookmark-grid">
       {cat.items.map((item) => (
         <div class="card-wrap">
@@ -30,13 +65,8 @@ const cat = bookmarks.find(c => c.category === category);
       var wrap = desc.closest('.card-wrap');
       var tooltip = wrap && wrap.querySelector('.card-tooltip');
       if (!tooltip) return;
-
-      // 用行高算出两行的标准高度
       var lineHeight = parseFloat(getComputedStyle(desc).lineHeight);
       var twoLineHeight = lineHeight * 2;
-
-      // scrollHeight 是完整文字高度（不受 line-clamp 影响）
-      // 如果完整高度超过两行，说明有隐藏内容
       if (desc.scrollHeight > twoLineHeight + 4) {
         delete tooltip.dataset.hidden;
       } else {
@@ -44,7 +74,6 @@ const cat = bookmarks.find(c => c.category === category);
       }
     });
   }
-
   if (document.fonts) {
     document.fonts.ready.then(checkTooltips);
   } else {

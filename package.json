@@ -17,6 +17,7 @@
     "@astrojs/starlight": "^0.40.0",
     "@fontsource-variable/archivo": "^5.2.8",
     "@fontsource/ibm-plex-mono": "^5.2.7",
-    "astro": "^6.4.6"
+    "astro": "^6.4.6",
+    "lucide-astro": "^0.556.0"
   }
 }

@@ -1,5 +1,5 @@
 :root {
-  color-scheme: light;
+    color-scheme: light;
 }
 @import "@fontsource-variable/archivo";
 @import "@fontsource/ibm-plex-mono/400.css";
@@ -222,14 +222,17 @@ starlight-toc a[href="#_top"] {
 
 /* 分类标题：小型大写，用 <p> 标签所以不受 h2 display:none 影响 */
 .section-heading {
-    font-size: 0.72rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--cg-ink-2);
     margin: 0 0 0.75rem;
     padding: 0;
     border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
 }
 
 .bookmark-grid {
