@@ -49,21 +49,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             </div>
           </div>
           <div class="hero-right">
-            <svg viewBox="0 0 320 240" width="320" height="240" fill="none" stroke="currentColor" stroke-width="1">
-              {[
-                [160,120],[80,60],[240,60],[60,170],[260,170],[130,190],[200,190],
-                [100,100],[220,100],[160,50]
-              ].map(([cx,cy], i) => (
-                <circle cx={cx} cy={cy} r="5" fill="currentColor" stroke="none" opacity={0.6 + i*0.04} />
-              ))}
-              {[
-                [160,120,80,60],[160,120,240,60],[160,120,60,170],[160,120,260,170],
-                [160,120,130,190],[160,120,200,190],[80,60,100,100],[240,60,220,100],
-                [80,60,160,50],[240,60,160,50],[100,100,60,170],[220,100,260,170]
-              ].map(([x1,y1,x2,y2], i) => (
-                <line x1={x1} y1={y1} x2={x2} y2={y2} opacity="0.25" />
-              ))}
-            </svg>
+            <img src="/homepage_hero_art.svg" alt="书签站插图" />
           </div>
         </section>
 
