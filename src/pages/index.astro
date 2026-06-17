@@ -174,27 +174,31 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         var canvas=document.getElementById('hero-canvas');
         if(!canvas)return;
         var ctx=canvas.getContext('2d');
-        var W=canvas.parentElement.offsetWidth||500;
-        var H=canvas.parentElement.offsetHeight||400;
-        if(H<200)H=400;
-        canvas.width=W;canvas.height=H;
+        var W,H;
+        function resize(){
+          W=canvas.parentElement.offsetWidth||500;
+          H=canvas.parentElement.offsetHeight||400;
+          if(H<200)H=400;
+          canvas.width=W;canvas.height=H;
+        }
+        resize();
         canvas.style.width='100%';canvas.style.height='100%';
+        window.addEventListener('resize',function(){resize();nodes=initNodes();});
 
-        var dark=document.documentElement.getAttribute('data-theme')==='dark';
         function getP(){
-          dark=document.documentElement.getAttribute('data-theme')==='dark';
+          var dark=document.documentElement.getAttribute('data-theme')==='dark';
           return{
-            nodeFill:dark?'rgba(83,74,183,0.12)':'rgba(83,74,183,0.07)',
-            nodeStroke:dark?'rgba(175,169,236,0.45)':'rgba(83,74,183,0.3)',
-            nodeHoverFill:dark?'rgba(83,74,183,0.28)':'rgba(83,74,183,0.14)',
-            nodeHoverStroke:dark?'rgba(200,196,255,1)':'rgba(53,47,155,0.9)',
-            edge:dark?'rgba(175,169,236,0.1)':'rgba(83,74,183,0.08)',
-            edgeHover:dark?'rgba(175,169,236,0.5)':'rgba(83,74,183,0.38)',
-            dot:dark?'rgba(210,206,255,0.85)':'rgba(83,74,183,0.75)',
-            tick:dark?'rgba(175,169,236,0.22)':'rgba(83,74,183,0.15)',
-            tickHover:dark?'rgba(200,196,255,0.9)':'rgba(53,47,155,0.8)',
-            text:dark?'rgba(200,198,215,0.7)':'rgba(50,44,100,0.62)',
-            textHover:dark?'rgba(235,232,255,1)':'rgba(36,30,120,1)',
+            nodeFill:dark?'rgba(255,255,255,0.05)':'rgba(0,0,0,0.03)',
+            nodeStroke:dark?'rgba(255,255,255,0.35)':'rgba(0,0,0,0.22)',
+            nodeHoverFill:dark?'rgba(255,255,255,0.12)':'rgba(0,0,0,0.07)',
+            nodeHoverStroke:dark?'rgba(255,255,255,0.9)':'rgba(0,0,0,0.85)',
+            edge:dark?'rgba(255,255,255,0.08)':'rgba(0,0,0,0.06)',
+            edgeHover:dark?'rgba(255,255,255,0.4)':'rgba(0,0,0,0.3)',
+            dot:dark?'rgba(255,255,255,0.7)':'rgba(0,0,0,0.55)',
+            tick:dark?'rgba(255,255,255,0.18)':'rgba(0,0,0,0.12)',
+            tickHover:dark?'rgba(255,255,255,0.8)':'rgba(0,0,0,0.7)',
+            text:dark?'rgba(255,255,255,0.55)':'rgba(0,0,0,0.45)',
+            textHover:dark?'rgba(255,255,255,1)':'rgba(0,0,0,0.9)',
           };
         }
 
@@ -242,8 +246,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         var mouse={x:-9999,y:-9999};
         canvas.addEventListener('mousemove',function(e){
           var rect=canvas.getBoundingClientRect();
-          mouse.x=(e.clientX-rect.left)*(W/rect.width);
-          mouse.y=(e.clientY-rect.top)*(H/rect.height);
+          mouse.x=(e.clientX-rect.left)*(canvas.width/rect.width);
+          mouse.y=(e.clientY-rect.top)*(canvas.height/rect.height);
         });
         canvas.addEventListener('mouseleave',function(){mouse.x=-9999;mouse.y=-9999;});
 
@@ -294,7 +298,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             ctx.lineWidth=active?0.9:0.4;ctx.stroke();
             var f=(off+t*0.32)%1;
             ctx.beginPath();ctx.arc(na.x+edx*f,na.y+edy*f,1.7,0,Math.PI*2);
-            ctx.fillStyle=active?P.dot:(dark?'rgba(175,169,236,0.4)':'rgba(83,74,183,0.35)');
+            ctx.fillStyle=active?P.dot:P.dot;
             ctx.fill();
           }
 
