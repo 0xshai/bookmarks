@@ -9,7 +9,7 @@ export default defineConfig({
       defaultLocale: "root",
       locales: { root: { label: "中文", lang: "zh-CN" } },
       sidebar: [
-        { label: "书签", slug: "bookmarks" },
+        { label: "神奇工具", slug: "bookmarks" },
         { label: "命令速查", slug: "commands/cheatsheet" },
         {
           label: "工具说明",
