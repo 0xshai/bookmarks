@@ -7,7 +7,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>闪光小破站 — 精选神奇工具</title>
+    <title>闪光小破站 — 精选工具书签</title>
     <meta name="description" content="精选开源工具与隐私友好资源书签，持续更新。" />
     <script is:inline>
       (function() {
@@ -45,7 +45,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               收录开源、隐私友好的生产力工具与资源，持续更新。
             </p>
             <div class="cta">
-              <a class="btn btn-primary" href={`${base}/bookmarks`}>神奇工具</a>
+              <a class="btn btn-primary" href={`${base}/bookmarks`}>浏览书签</a>
               <a class="btn btn-secondary" href={`${base}/commands`}>常用命令</a>
             </div>
           </div>
@@ -56,32 +56,60 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
         <section class="features">
           <article class="feature">
-            <svg class="ficon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-              <polygon points="4,6 44,6 30,22 30,38 18,44 18,22" stroke-linejoin="round"/>
-              <line x1="8" y1="13" x2="40" y2="13" stroke-linecap="round"/>
-              <line x1="14" y1="20" x2="34" y2="20" stroke-linecap="round"/>
-              <circle cx="24" cy="40" r="4"/>
+            <!-- 精挑细选：钻石切割 + 剔除线 -->
+            <svg class="ficon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+              <!-- 钻石轮廓 -->
+              <polygon points="24,5 40,18 24,44 8,18" stroke-linejoin="miter"/>
+              <!-- 腰线 -->
+              <line x1="8" y1="18" x2="40" y2="18"/>
+              <!-- 顶部刻面 -->
+              <line x1="16" y1="18" x2="24" y2="5"/>
+              <line x1="32" y1="18" x2="24" y2="5"/>
+              <line x1="12" y1="18" x2="16" y2="11"/>
+              <line x1="36" y1="18" x2="32" y2="11"/>
+              <!-- 底部刻面 -->
+              <line x1="16" y1="18" x2="24" y2="44"/>
+              <line x1="32" y1="18" x2="24" y2="44"/>
+              <!-- 剔除标记：右上角打叉的小圆 -->
+              <circle cx="38" cy="9" r="4.5"/>
+              <line x1="35.8" y1="6.8" x2="40.2" y2="11.2" stroke-width="1"/>
+              <line x1="40.2" y1="6.8" x2="35.8" y2="11.2" stroke-width="1"/>
             </svg>
             <h2>精挑细选</h2>
             <p>每个分类只保留最实用的工具，有更好的产品就淘汰旧的。</p>
           </article>
           <article class="feature">
-            <svg class="ficon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M24,4 L42,12 L42,26 Q42,38 24,44 Q6,38 6,26 L6,12 Z" stroke-linejoin="round"/>
-              <rect x="16" y="26" width="16" height="12" rx="2"/>
-              <path d="M18,26 Q18,18 24,18 Q30,18 30,26"/>
-              <circle cx="24" cy="32" r="2" fill="currentColor"/>
+            <!-- 隐私优先：六边形盾 + 眼睛划掉 -->
+            <svg class="ficon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+              <!-- 六边形盾 -->
+              <path d="M24,4 L40,11 L40,27 Q40,38 24,44 Q8,38 8,27 L8,11 Z" stroke-linejoin="round"/>
+              <!-- 眼睛轮廓 -->
+              <path d="M15,24 Q24,16 33,24 Q24,32 15,24 Z"/>
+              <!-- 瞳孔 -->
+              <circle cx="24" cy="24" r="3" stroke-width="1"/>
+              <!-- 斜杠划掉 -->
+              <line x1="15" y1="17" x2="33" y2="31" stroke-width="1.4"/>
             </svg>
             <h2>隐私优先</h2>
             <p>优先推荐开源、本地优先、端到端加密的工具。</p>
           </article>
           <article class="feature">
-            <svg class="ficon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-              <line x1="8" y1="14" x2="40" y2="14" stroke-linecap="round"/>
-              <line x1="14" y1="24" x2="40" y2="24" stroke-linecap="round"/>
-              <line x1="20" y1="34" x2="40" y2="34" stroke-linecap="round"/>
-              <circle cx="8" cy="24" r="4"/>
-              <circle cx="14" cy="34" r="4"/>
+            <!-- 极客极简：终端提示符 + 光标 -->
+            <svg class="ficon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+              <!-- 终端外框 -->
+              <rect x="4" y="8" width="40" height="32"/>
+              <!-- 顶部栏 -->
+              <line x1="4" y1="16" x2="44" y2="16"/>
+              <!-- 三个点 -->
+              <circle cx="10" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+              <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+              <circle cx="22" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+              <!-- 提示符 > -->
+              <polyline points="10,24 15,27 10,30" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- 命令行文字块 -->
+              <line x1="18" y1="27" x2="30" y2="27" stroke-linecap="round"/>
+              <!-- 光标 -->
+              <rect x="31" y="24" width="4" height="6" fill="currentColor" stroke="none"/>
             </svg>
             <h2>极客极简</h2>
             <p>轻量、高效、无广告，让工具回归工具本身。</p>
@@ -173,164 +201,271 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       });
     </script>
     <script>
-      (function(){
-        var canvas=document.getElementById('hero-canvas');
-        if(!canvas)return;
-        var ctx=canvas.getContext('2d');
-        var W,H;
-        function resize(){
-          W=canvas.parentElement.offsetWidth||500;
-          H=canvas.parentElement.offsetHeight||400;
-          if(H<200)H=400;
-          canvas.width=W;canvas.height=H;
-        }
-        resize();
-        canvas.style.width='100%';canvas.style.height='100%';
-        window.addEventListener('resize',function(){resize();nodes=initNodes();});
+    (function(){
+      var canvas = document.getElementById('hero-canvas');
+      if(!canvas) return;
+      var ctx = canvas.getContext('2d');
 
-        function getP(){
-          var dark=document.documentElement.getAttribute('data-theme')==='dark';
-          return{
-            nodeFill:dark?'rgba(255,255,255,0.05)':'rgba(0,0,0,0.03)',
-            nodeStroke:dark?'rgba(255,255,255,0.35)':'rgba(0,0,0,0.22)',
-            nodeHoverFill:dark?'rgba(255,255,255,0.12)':'rgba(0,0,0,0.07)',
-            nodeHoverStroke:dark?'rgba(255,255,255,0.9)':'rgba(0,0,0,0.85)',
-            edge:dark?'rgba(255,255,255,0.08)':'rgba(0,0,0,0.06)',
-            edgeHover:dark?'rgba(255,255,255,0.4)':'rgba(0,0,0,0.3)',
-            dot:dark?'rgba(255,255,255,0.7)':'rgba(0,0,0,0.55)',
-            tick:dark?'rgba(255,255,255,0.18)':'rgba(0,0,0,0.12)',
-            tickHover:dark?'rgba(255,255,255,0.8)':'rgba(0,0,0,0.7)',
-            text:dark?'rgba(255,255,255,0.55)':'rgba(0,0,0,0.45)',
-            textHover:dark?'rgba(255,255,255,1)':'rgba(0,0,0,0.9)',
-          };
-        }
+      // ── 固定逻辑尺寸（节点坐标在此空间内定义）──
+      var LW = 560, LH = 400;
 
-        var labels=['开源','隐私','书签','工具','极简','加密','本地','效率','无广告','精选','轻量','安全'];
-        var N=labels.length;
-        var MIN_GAP=18;
+      // ── 真实像素尺寸（跟随容器缩放）──
+      var PW, PH, scale;
 
-        function initNodes(){
-          var ns=[];
-          for(var i=0;i<N;i++){
-            var r=28+Math.random()*10;
-            var x,y,ok,tries=0;
-            do{
-              ok=true;
-              x=r+20+Math.random()*(W-r*2-40);
-              y=r+20+Math.random()*(H-r*2-40);
-              for(var k=0;k<ns.length;k++){
-                var dx=ns[k].x-x,dy=ns[k].y-y;
-                if(Math.sqrt(dx*dx+dy*dy)<ns[k].r+r+MIN_GAP){ok=false;break;}
-              }
-            }while(!ok&&++tries<500);
-            ns.push({
-              x:x,y:y,vx:(Math.random()-0.5)*0.22,vy:(Math.random()-0.5)*0.22,
-              r:r,label:labels[i],phase:Math.random()*Math.PI*2,
-              spd:0.35+Math.random()*0.25,hovered:false,
-              tickAngle:Math.random()*Math.PI*2,
-              tickSpeed:(Math.random()<0.5?1:-1)*(0.007+Math.random()*0.005),
-              tickLen:0.35+Math.random()*0.45,
-              tickR:r+7+Math.random()*5,
-            });
+      function resize(){
+        var container = canvas.parentElement;
+        PW = container.offsetWidth  || 560;
+        PH = container.offsetHeight || 400;
+        if(PH < 200) PH = 400;
+        var dpr = window.devicePixelRatio || 1;
+        canvas.width  = PW * dpr;
+        canvas.height = PH * dpr;
+        canvas.style.width  = PW + 'px';
+        canvas.style.height = PH + 'px';
+        ctx.setTransform(1,0,0,1,0,0);
+        // 缩放比：保持宽高比，居中放置
+        scale = Math.min(PW / LW, PH / LH) * dpr;
+        var offX = (PW * dpr - LW * scale) / 2;
+        var offY = (PH * dpr - LH * scale) / 2;
+        ctx.setTransform(scale, 0, 0, scale, offX, offY);
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      // ── 主题颜色：直接读 CSS 变量 ──
+      function getP(){
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        // 亮色：paper=#f7f6f2  ink=#16150f
+        // 暗色：paper=#16150f  ink=#f3f1ea
+        return {
+          bg:          dark ? '#16150f' : '#f7f6f2',
+          grid:        dark ? 'rgba(243,241,234,0.05)' : 'rgba(22,21,15,0.06)',
+          nodeBody:    dark ? '#1e1c16' : '#eeecea',
+          nodeHead:    dark ? '#2c2a23' : '#dddbd2',
+          nodeBorder:  dark ? 'rgba(243,241,234,0.22)' : 'rgba(22,21,15,0.28)',
+          nodeHovBody: dark ? '#2a2820' : '#e4e2d8',
+          nodeHovBord: dark ? 'rgba(243,241,234,0.7)' : 'rgba(22,21,15,0.75)',
+          textHead:    '#ffffff',
+          textLabel:   dark ? 'rgba(243,241,234,0.55)' : 'rgba(22,21,15,0.5)',
+          textLabelH:  dark ? '#f3f1ea' : '#16150f',
+          textMuted:   dark ? 'rgba(243,241,234,0.38)' : 'rgba(22,21,15,0.38)',
+          socketOut:   dark ? '#f3f1ea' : '#16150f',
+          socketIn:    dark ? '#7c7a70' : '#87847a',
+          socketHov:   dark ? '#ffffff' : '#000000',
+          wire:        dark ? 'rgba(243,241,234,0.2)' : 'rgba(22,21,15,0.15)',
+          wireHov:     dark ? 'rgba(243,241,234,0.75)' : 'rgba(22,21,15,0.7)',
+          dot:         dark ? 'rgba(243,241,234,0.65)' : 'rgba(22,21,15,0.5)',
+          watermark:   dark ? 'rgba(243,241,234,0.12)' : 'rgba(22,21,15,0.1)',
+        };
+      }
+
+      // ── 节点定义 ──
+      var NODE_W = 148, HEAD_H = 24, ROW_H = 21, SR = 5;
+
+      var defs = [
+        { title:'Image Texture',   color:'#3d6b9e', outputs:['Color','Alpha'],           inputs:['Vector'] },
+        { title:'Noise Texture',   color:'#5a4ea8', outputs:['Color','Fac'],             inputs:['Vector','Scale','Detail'] },
+        { title:'Mix Shader',      color:'#2a7a35', outputs:['Shader'],                  inputs:['Fac','Shader 1','Shader 2'] },
+        { title:'Principled BSDF', color:'#8a5a1a', outputs:['BSDF'],                   inputs:['Base Color','Roughness','Metallic'] },
+        { title:'Emission',        color:'#993030', outputs:['Emission'],                inputs:['Color','Strength'] },
+        { title:'Material Output', color:'#3d5a6b', outputs:[],                          inputs:['Surface','Volume'] },
+      ];
+
+      function nodeH(d){ return HEAD_H + Math.max(d.outputs.length, d.inputs.length, 1) * ROW_H + 8; }
+
+      // 固定布局坐标（在 LW×LH 逻辑空间内）
+      var layout = [
+        { x: 18,  y: 60  },
+        { x: 18,  y: 228 },
+        { x: 196, y: 148 },
+        { x: 196, y: 28  },
+        { x: 196, y: 298 },
+        { x: 384, y: 165 },
+      ];
+
+      var nodes = defs.map(function(d, i){ return { def:d, x:layout[i].x, y:layout[i].y }; });
+
+      var conns = [
+        { from:0, oi:0, to:2, ii:1 },
+        { from:1, oi:0, to:2, ii:2 },
+        { from:1, oi:1, to:3, ii:0 },
+        { from:3, oi:0, to:5, ii:0 },
+        { from:2, oi:0, to:5, ii:0 },
+        { from:4, oi:0, to:5, ii:0 },
+        { from:0, oi:1, to:3, ii:2 },
+      ];
+
+      var dotPhases = conns.map(function(){ return { p: Math.random(), s: 0.28 + Math.random()*0.18 }; });
+
+      function spPos(n, type, idx){
+        var rowsY = HEAD_H + 4 + idx * ROW_H + ROW_H/2;
+        return {
+          x: type==='out' ? n.x + NODE_W : n.x,
+          y: n.y + rowsY
+        };
+      }
+
+      // ── 鼠标（转换回逻辑坐标）──
+      var mouse = { x:-9999, y:-9999 };
+      var hovNode = -1, hovSock = null;
+
+      canvas.addEventListener('mousemove', function(e){
+        var r = canvas.getBoundingClientRect();
+        var cx = (e.clientX - r.left) * (canvas.width  / r.width);
+        var cy = (e.clientY - r.top)  * (canvas.height / r.height);
+        var offX = (canvas.width  - LW * scale) / 2;
+        var offY = (canvas.height - LH * scale) / 2;
+        mouse.x = (cx - offX) / scale;
+        mouse.y = (cy - offY) / scale;
+        updateHover();
+      });
+      canvas.addEventListener('mouseleave', function(){ mouse.x=-9999; mouse.y=-9999; hovNode=-1; hovSock=null; });
+
+      function updateHover(){
+        hovNode = -1; hovSock = null;
+        for(var i = nodes.length-1; i >= 0; i--){
+          var n = nodes[i], h = nodeH(n.def);
+          if(mouse.x>=n.x && mouse.x<=n.x+NODE_W && mouse.y>=n.y && mouse.y<=n.y+h){
+            hovNode = i; break;
           }
-          return ns;
         }
-
-        var nodes=initNodes();
-        var edges=[];
-        for(var i=0;i<N;i++){
-          for(var j=i+1;j<N;j++){
-            var dx=nodes[i].x-nodes[j].x,dy=nodes[i].y-nodes[j].y;
-            var d=Math.sqrt(dx*dx+dy*dy);
-            if(d<220&&Math.random()<0.45) edges.push([i,j,Math.random()]);
+        for(var i=0; i<nodes.length; i++){
+          var n = nodes[i];
+          for(var oi=0; oi<n.def.outputs.length; oi++){
+            var sp = spPos(n,'out',oi);
+            var dx=mouse.x-sp.x, dy=mouse.y-sp.y;
+            if(dx*dx+dy*dy < (SR+5)*(SR+5)){ hovSock={node:i,type:'out',idx:oi}; return; }
+          }
+          for(var ii=0; ii<n.def.inputs.length; ii++){
+            var sp = spPos(n,'in',ii);
+            var dx=mouse.x-sp.x, dy=mouse.y-sp.y;
+            if(dx*dx+dy*dy < (SR+5)*(SR+5)){ hovSock={node:i,type:'in',idx:ii}; return; }
           }
         }
+      }
 
-        var mouse={x:-9999,y:-9999};
-        canvas.addEventListener('mousemove',function(e){
-          var rect=canvas.getBoundingClientRect();
-          mouse.x=(e.clientX-rect.left)*(canvas.width/rect.width);
-          mouse.y=(e.clientY-rect.top)*(canvas.height/rect.height);
-        });
-        canvas.addEventListener('mouseleave',function(){mouse.x=-9999;mouse.y=-9999;});
+      var t = 0;
 
-        var t=0;
-        function draw(){
-          var P=getP();
-          ctx.clearRect(0,0,W,H);
-          t+=0.011;
+      function drawGrid(P){
+        var step = 26;
+        ctx.strokeStyle = P.grid;
+        ctx.lineWidth = 0.5;
+        for(var x=0; x<LW; x+=step){ ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,LH); ctx.stroke(); }
+        for(var y=0; y<LH; y+=step){ ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(LW,y); ctx.stroke(); }
+      }
 
-          for(var i=0;i<N;i++){
-            var n=nodes[i];
-            n.x+=n.vx+Math.sin(t*n.spd+n.phase)*0.15;
-            n.y+=n.vy+Math.cos(t*n.spd*0.75+n.phase)*0.12;
-            if(n.x<n.r+8){n.x=n.r+8;n.vx=Math.abs(n.vx);}
-            if(n.x>W-n.r-8){n.x=W-n.r-8;n.vx=-Math.abs(n.vx);}
-            if(n.y<n.r+8){n.y=n.r+8;n.vy=Math.abs(n.vy);}
-            if(n.y>H-n.r-8){n.y=H-n.r-8;n.vy=-Math.abs(n.vy);}
-            n.tickAngle+=n.tickSpeed;
-            var ddx=mouse.x-n.x,ddy=mouse.y-n.y;
-            n.hovered=Math.sqrt(ddx*ddx+ddy*ddy)<n.r+10;
-          }
+      function drawWire(ax,ay,bx,by, active, di, P){
+        var cp = Math.abs(bx-ax)*0.48;
+        ctx.beginPath();
+        ctx.moveTo(ax,ay);
+        ctx.bezierCurveTo(ax+cp,ay, bx-cp,by, bx,by);
+        ctx.strokeStyle = active ? P.wireHov : P.wire;
+        ctx.lineWidth   = active ? 1.4 : 0.8;
+        ctx.stroke();
+        // 流动点
+        var f = (dotPhases[di].p + t * dotPhases[di].s) % 1;
+        var it=1-f;
+        var dx = it*it*it*ax + 3*it*it*f*(ax+cp) + 3*it*f*f*(bx-cp) + f*f*f*bx;
+        var dy2= it*it*it*ay + 3*it*it*f*ay       + 3*it*f*f*by       + f*f*f*by;
+        ctx.beginPath(); ctx.arc(dx, dy2, 2, 0, Math.PI*2);
+        ctx.fillStyle = active ? P.socketHov : P.dot;
+        ctx.fill();
+      }
 
-          for(var iter=0;iter<3;iter++){
-            for(var i=0;i<N;i++){
-              for(var j=i+1;j<N;j++){
-                var a=nodes[i],b=nodes[j];
-                var dx=b.x-a.x,dy=b.y-a.y;
-                var dist=Math.sqrt(dx*dx+dy*dy);
-                var minD=a.r+b.r+MIN_GAP;
-                if(dist<minD&&dist>0.01){
-                  var push=(minD-dist)*0.5;
-                  var nx=dx/dist,ny=dy/dist;
-                  a.x-=nx*push;a.y-=ny*push;
-                  b.x+=nx*push;b.y+=ny*push;
-                  a.vx-=nx*0.05;a.vy-=ny*0.05;
-                  b.vx+=nx*0.05;b.vy+=ny*0.05;
-                }
-              }
-            }
-          }
+      function drawNode(n, idx, P){
+        var d = n.def;
+        var h = nodeH(d);
+        var isH = hovNode === idx;
 
-          for(var ei=0;ei<edges.length;ei++){
-            var e=edges[ei],na=nodes[e[0]],nb=nodes[e[1]],off=e[2];
-            var active=na.hovered||nb.hovered;
-            var edx=nb.x-na.x,edy=nb.y-na.y;
-            ctx.beginPath();ctx.moveTo(na.x,na.y);ctx.lineTo(nb.x,nb.y);
-            ctx.strokeStyle=active?P.edgeHover:P.edge;
-            ctx.lineWidth=active?0.9:0.4;ctx.stroke();
-            var f=(off+t*0.32)%1;
-            ctx.beginPath();ctx.arc(na.x+edx*f,na.y+edy*f,1.7,0,Math.PI*2);
-            ctx.fillStyle=active?P.dot:P.dot;
+        // 外框
+        ctx.fillStyle   = isH ? P.nodeHovBody : P.nodeBody;
+        ctx.strokeStyle = isH ? P.nodeHovBord : P.nodeBorder;
+        ctx.lineWidth   = isH ? 1.1 : 0.6;
+        ctx.fillRect(n.x, n.y, NODE_W, h);
+        ctx.strokeRect(n.x, n.y, NODE_W, h);
+
+        // 标题色块
+        ctx.fillStyle   = d.color;
+        ctx.globalAlpha = 0.88;
+        ctx.fillRect(n.x, n.y, NODE_W, HEAD_H);
+        ctx.globalAlpha = 1;
+
+        // 标题文字
+        ctx.fillStyle    = P.textHead;
+        ctx.font         = '500 10px "IBM Plex Mono",monospace';
+        ctx.textAlign    = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(d.title, n.x + NODE_W/2, n.y + HEAD_H/2);
+
+        var rows = Math.max(d.outputs.length, d.inputs.length, 1);
+        for(var row=0; row<rows; row++){
+          // 输出
+          if(row < d.outputs.length){
+            var sp = spPos(n,'out',row);
+            var hs = hovSock && hovSock.node===idx && hovSock.type==='out' && hovSock.idx===row;
+            ctx.beginPath(); ctx.arc(sp.x, sp.y, SR, 0, Math.PI*2);
+            ctx.fillStyle = hs ? P.socketHov : P.socketOut;
             ctx.fill();
+            ctx.strokeStyle = P.nodeBorder; ctx.lineWidth = 0.5; ctx.stroke();
+            ctx.fillStyle    = isH ? P.textLabelH : P.textLabel;
+            ctx.font         = '400 9px "IBM Plex Mono",monospace';
+            ctx.textAlign    = 'right'; ctx.textBaseline = 'middle';
+            ctx.fillText(d.outputs[row], sp.x - SR - 5, sp.y);
           }
-
-          for(var i=0;i<N;i++){
-            var n=nodes[i];
-            var pulse=1+Math.sin(t*1.3+n.phase)*0.022;
-            var nr=n.r*pulse;
-            ctx.beginPath();ctx.arc(n.x,n.y,nr,0,Math.PI*2);
-            ctx.fillStyle=n.hovered?P.nodeHoverFill:P.nodeFill;ctx.fill();
-            ctx.strokeStyle=n.hovered?P.nodeHoverStroke:P.nodeStroke;
-            ctx.lineWidth=n.hovered?1.1:0.5;ctx.stroke();
-            var ta=n.tickAngle,tb=ta+n.tickLen*Math.PI*2;
-            ctx.beginPath();ctx.arc(n.x,n.y,n.tickR,ta,tb);
-            ctx.strokeStyle=n.hovered?P.tickHover:P.tick;
-            ctx.lineWidth=n.hovered?1.1:0.45;ctx.stroke();
-            ctx.beginPath();ctx.arc(n.x,n.y,n.tickR,ta+Math.PI,ta+Math.PI+n.tickLen*0.28*Math.PI*2);
-            ctx.strokeStyle=n.hovered?P.tickHover:P.tick;
-            ctx.lineWidth=n.hovered?0.7:0.35;ctx.stroke();
-            var fs=Math.round(nr*0.37);
-            ctx.font=(n.hovered?'500':'400')+' '+fs+'px sans-serif';
-            ctx.textAlign='center';ctx.textBaseline='middle';
-            ctx.fillStyle=n.hovered?P.textHover:P.text;
-            ctx.fillText(n.label,n.x,n.y);
+          // 输入
+          if(row < d.inputs.length){
+            var sp = spPos(n,'in',row);
+            var hs = hovSock && hovSock.node===idx && hovSock.type==='in' && hovSock.idx===row;
+            ctx.beginPath(); ctx.arc(sp.x, sp.y, SR, 0, Math.PI*2);
+            ctx.fillStyle = hs ? P.socketHov : P.socketIn;
+            ctx.fill();
+            ctx.strokeStyle = P.nodeBorder; ctx.lineWidth = 0.5; ctx.stroke();
+            ctx.fillStyle    = isH ? P.textLabelH : P.textMuted;
+            ctx.font         = '400 9px "IBM Plex Mono",monospace';
+            ctx.textAlign    = 'left'; ctx.textBaseline = 'middle';
+            ctx.fillText(d.inputs[row], sp.x + SR + 5, sp.y);
           }
-
-          requestAnimationFrame(draw);
         }
-        draw();
-      })();
+      }
+
+      function frame(){
+        t += 0.012;
+        var P = getP();
+
+        // 清空（用 save/restore 绕过 transform）
+        ctx.save();
+        ctx.setTransform(1,0,0,1,0,0);
+        ctx.fillStyle = P.bg;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.restore();
+
+        drawGrid(P);
+
+        // 连线
+        for(var ci=0; ci<conns.length; ci++){
+          var c = conns[ci];
+          var sp1 = spPos(nodes[c.from],'out',c.oi);
+          var sp2 = spPos(nodes[c.to],'in',c.ii);
+          var active = hovNode===c.from || hovNode===c.to ||
+            (hovSock && ((hovSock.node===c.from&&hovSock.type==='out'&&hovSock.idx===c.oi)||
+                         (hovSock.node===c.to  &&hovSock.type==='in' &&hovSock.idx===c.ii)));
+          drawWire(sp1.x,sp1.y,sp2.x,sp2.y, active, ci, P);
+        }
+
+        // 节点
+        for(var i=0; i<nodes.length; i++) drawNode(nodes[i], i, P);
+
+        // 水印
+        ctx.fillStyle    = P.watermark;
+        ctx.font         = '400 9px "IBM Plex Mono",monospace';
+        ctx.textAlign    = 'left';
+        ctx.textBaseline = 'bottom';
+        ctx.fillText('Shader Editor — Material.001', 8, LH - 6);
+
+        requestAnimationFrame(frame);
+      }
+      frame();
+    })();
     </script>
   </body>
 </html>
