@@ -1,0 +1,158 @@
+---
+title: "John Carmack：用铝热剂撬开了3D游戏时代的大门"
+description: "14岁因盗窃电脑坐了一年少管所，出来后闷头写代码，发明了现代3D引擎的地基。后来做火箭、做VR、做AGI。从未停止。"
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<div style="display: flex; gap: 1.5rem; align-items: flex-start; margin-bottom: 1.5rem;">
+  <img src="/images/john-carmack.avif" alt="John Carmack" style="width: 200px; flex-shrink: 0; border-radius: 4px;" />
+  <div>
+
+**John D. Carmack II（1970— ）**，美国程序员，id Software 联合创始人。
+
+《毁灭战士》《雷神之锤》的引擎作者。现代 FPS 游戏的技术奠基人。后来做 VR，现在在搞 AGI。
+
+每一个领域，他都是从零开始自学、然后干到世界顶尖。
+
+  </div>
+</div>
+
+---
+
+## 一、铝热剂与少管所：故事从一次盗窃开始
+
+1984 年，14 岁的 John Carmack 和几个朋友策划了一次盗窃——目标是学校机房里的 Apple II 电脑。
+
+为了进入大楼，他自制了一种**铝热剂混合凡士林**的黏性物质，用来融化窗玻璃。窗户打穿了，但一个身材偏胖的同伙卡在洞里，不得不把窗户整个推开——触发了静音报警器。
+
+警察来了，Carmack 被捕。
+
+<Aside type="danger" title="精神科评估报告写了什么">
+Carmack 被送去做精神科评估。报告里的结论是："对其他人类几乎没有同理心"，并形容他是"长了腿的大脑"。他随后被判在少年管教所待满一年。
+</Aside>
+
+出来之后，他没有继续混。他把自己关进房间，靠披萨和咖啡因饮料，开始自学写代码。
+
+---
+
+## 二、大学退学，入职 Softdisk，遇见 Romero
+
+Carmack 以 4.0 GPA 从高中毕业，读了密苏里大学堪萨斯城分校两个学期，然后退学，去做自由程序员。
+
+路易斯安那州什里夫波特的软件公司 **Softdisk** 雇用了他，在那里他遇见了 **John Romero**——日后 id Software 的另一位灵魂人物。
+
+1990 年，还在 Softdisk 任职期间，Carmack 写出了一个让所有人震惊的技术演示：**在 DOS 下实现了平滑的横向滚动**。
+
+这在当时被认为是 PC 上不可能做到的事情——任天堂的 Super Mario Bros. 能做到，但 PC 不行。Carmack 找到了一种利用 EGA 显卡寄存器的方法，绕开了硬件限制，让滚动变得流畅。
+
+<Aside type="tip" title="这个演示有多重要">
+Romero 看到之后立刻意识到：他们可以做一款能和任天堂竞争的 PC 平台游戏。这个演示直接导致了 Commander Keen 的诞生，也是 id Software 成立的导火索。
+</Aside>
+
+---
+
+## 三、id Software：三年三次改写 3D 渲染的历史
+
+1991 年，Carmack、Romero 等人离开 Softdisk，创立 **id Software**。
+
+接下来三年，Carmack 连续三次从根本上推进了实时 3D 渲染技术的边界：
+
+**1992 年 — Wolfenstein 3D**
+
+用光线投射（Raycasting）实现伪 3D 效果，用简单的数学让走廊看起来有纵深感，运行在普通 PC 上流畅无比。这是 FPS 类型的开山之作。
+
+**1993 年 — Doom**
+
+引入了真正的高度差、光照变化、非正交墙体。BSP（二叉空间分割）树让引擎能极高效地决定哪些墙需要渲染，哪些不需要——这个技术沿用至今。Doom 发布当天，据估计下载量超过了当月 Windows 3.1 的销量。
+
+**1996 年 — Quake**
+
+第一款完全实时 3D 渲染的 FPS，每一面墙、每一个物体都是真正的三维多边形。为了实现这一点，Carmack 发明或改良了多项核心算法：
+
+| 技术 | 作用 |
+|------|------|
+| BSP 树 + PVS | 极速剔除不可见几何体 |
+| 表面缓存（Surface Caching） | 动态纹理光照，大幅节省显存 |
+| Quake 网络代码 | 奠定了多人 FPS 网络同步的基础 |
+
+<Aside type="note" title="快速平方根倒数">
+Quake III 中有一段著名的魔法代码，用位操作近似计算平方根倒数，速度比标准库快数倍。这个算法后来被称为"快速平方根倒数（Fast Inverse Square Root）"，在物理引擎和图形计算中被广泛使用，代码里还有一行注释：`// what the f**k?`
+</Aside>
+
+---
+
+## 四、开源：把引擎送给世界
+
+Quake 源代码被盗后在社区流传，有人用它移植了 Linux 版本并把补丁发给 Carmack。他没有追究法律责任，而是把这些补丁作为 id 官方 Linux 移植的基础。
+
+此后，id Software 陆续将历代引擎开源：
+- Quake（1999）
+- Quake 2（2001）
+- Quake 3（2005）
+- Doom 3（2011）
+
+这些代码成为无数独立游戏、移植项目、技术研究的基础，也直接影响了开源图形引擎的整个生态。
+
+---
+
+## 五、火箭：Ferrari 钱拿来造航天器
+
+2000 年前后，Carmack 在盘点自己花在改装 Ferrari 上的钱之后，决定把这些钱用来做一件更有意思的事：**造火箭**。
+
+他创立了 **Armadillo Aerospace**，自掏腰包，每年投入超过一百万美元，目标是可重复使用的亚轨道飞行器。
+
+<Aside type="tip" title="NASA 挑战赛战绩">
+2008 年，Armadillo Aerospace 赢得 NASA 月球着陆器挑战赛 Level 1，获得 35 万美元奖金。2009 年完成 Level 2，再获 50 万美元。公司在 2013 年进入休眠状态。
+</Aside>
+
+他后来说，航空航天"比做游戏简单多了"——因为物理规律是固定的，不像游戏设计那样充满主观判断。
+
+---
+
+## 六、VR：加入 Oculus，推动现代 VR 成型
+
+2013 年，Carmack 加入 **Oculus VR** 担任 CTO，同年辞去在 id Software 的职位。
+
+他在 Oculus 的工作集中在两个核心问题：**降低延迟**和**移动端 VR 优化**。VR 体验最大的敌人是延迟——头部转动和画面响应之间哪怕 20 毫秒的差距都会引发眩晕。Carmack 对这个问题的执念程度，和他当年对帧率的执念一模一样。
+
+2019 年，他降低在 Oculus 的参与程度，把更多精力转向 AGI 研究。
+
+---
+
+## 七、AGI：现在的他在做什么
+
+2022 年，他离开 Meta（Oculus 的母公司），创立 **Keen Technologies**，目标是实现 AGI。
+
+<Aside type="note" title="他对 AGI 的判断">
+Carmack 公开表示，他认为 AGI 可能在 2030 年前后出现。他的方法论和大部分 AI 公司不同——他更关注"以更少的计算实现更多的智能"，而不是无限堆算力。
+</Aside>
+
+公司成立后很快完成了 2000 万美元融资。他现在仍在活跃地写代码、发长文，在 X 上分享技术思考。
+
+---
+
+## 八、Fabrice Bellard 怎么评价他
+
+前文写过 Fabrice Bellard，他曾说：
+
+> "我很钦佩 Fabrice Bellard。他几乎可以肯定是比我更全面的程序员。"
+
+这句话出自 John Carmack 之口——而 Carmack 本人，是公认的顶级程序员之一。
+
+两个人之间这种相互钦佩，本身就说明了一些事情。
+
+---
+
+## 结语
+
+Carmack 从少管所出来，闷头写代码，三年之内把实时 3D 渲染推进了三个世代。然后他拿 Ferrari 的钱造火箭，造完去做 VR，做完去搞 AGI。
+
+他从不觉得自己在"跨界"。他只是在找下一个有意思的困难问题。
+
+> "虚拟世界里有什么根本性的错误吗？如果一个人用一台便宜的电脑就能在虚拟世界里称帝，这真的是坏事吗？"
+> — John Carmack
+
+---
+
+`#游戏引擎` `#3D图形` `#程序员人物` `#id Software` `#开源`

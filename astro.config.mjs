@@ -12,7 +12,7 @@ export default defineConfig({
         { label: "神奇工具", slug: "bookmarks" },
         { label: "命令速查", slug: "commands/cheatsheet" },
         {
-          label: "工具说明",
+          label: "工具秘籍",
           items: [
             { label: "mpv 播放器", slug: "tools/mpv" },
             { label: "Lazygit 使用指南", slug: "tools/lazygit" },
@@ -40,6 +40,14 @@ export default defineConfig({
             {
               label: "Fabrice Bellard：重写互联网底层",
               slug: "people/fabrice-bellard",
+            },
+            {
+              label: "John Carmack：3D游戏时代的开创者",
+              slug: "people/john-carmack",
+            },
+            {
+              label: "Moxie Marlinspike：给世界造了把锁",
+              slug: "people/moxie-marlinspike",
             },
           ],
         },
