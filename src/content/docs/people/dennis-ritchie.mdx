@@ -1,0 +1,144 @@
+---
+title: "Dennis Ritchie：写出 C 和 Unix，奠定整个现代计算机世界的地基"
+description: "C 语言与 Unix 之父 Dennis Ritchie 的人物传记：Bell Labs 黄金年代、两项封神之作、图灵奖与国家技术奖章，以及那个几乎无人知晓的离世"
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<div style="display: flex; gap: 1.5rem; align-items: flex-start; margin-bottom: 1.5rem;">
+  <img src="/images/dennis-ritchie.avif" alt="Dennis Ritchie" style="width: 200px; flex-shrink: 0; border-radius: 4px;" />
+  <div>
+
+**Dennis MacAlistair Ritchie（1941–2011）**，人称 **dmr**，C 语言的创造者，Unix 的联合缔造者。
+
+他的名字远不如乔布斯响亮，但他写下的两行代码，撑起了整个现代计算世界的地基。
+
+  </div>
+</div>
+
+---
+
+## 一、Bell Labs 之子：父亲的影响，哈佛的底色
+
+Dennis 1941 年生于纽约 Bronxville，父亲 Alistair Ritchie 是 Bell Labs 的交换系统工程师，家里从小就有技术氛围。
+
+他在哈佛拿下物理学士、数学博士，成绩优异，但他自己后来说过：
+
+<Aside type="tip" title="他自己怎么说">
+"我的本科经历让我意识到，我没聪明到能做物理学家——但计算机真的很酷。"
+</Aside>
+
+1967 年，他加入父亲所在的 Bell Labs，从此再没离开，直到 2007 年退休。整整 40 年，一栋楼，两项改变世界的发明。
+
+---
+
+## 二、Unix：从失败项目的废墟里长出来的操作系统
+
+Bell Labs 最初参与了 MIT 主导的 **Multics** 项目——一个野心极大的分时操作系统，设计过于复杂，最终以失败告终，Bell Labs 撤资退出。
+
+但 Dennis 和他的同事 **Ken Thompson** 没有放弃。他们把 Multics 里觉得好的想法捡起来，在一台几乎被废弃的 **PDP-7** 上，从头写了一个极简版本，最初只是为了运行一个 Ken 自己写的太空游戏。
+
+这个"玩具系统"，后来被他们命名为 **Unix**。
+
+<Aside type="note" title="Unix 名字的来历">
+Unix 最初叫 **Unics**，是对 Multics 的一个文字游戏——"Uni"暗示它更简单、更专注，只做一件事。后来拼写改为 Unix，沿用至今。
+</Aside>
+
+1973 年，他们用 C 语言重写了 Unix 内核——这是操作系统历史上第一次用高级语言而非汇编来实现，意义巨大：Unix 从此可以移植到几乎任何硬件平台。
+
+---
+
+## 三、C 语言：为了写 Unix，顺手发明了编程语言的"拉丁文"
+
+Unix 最初用 B 语言写成，B 语言是 Ken Thompson 在 BCPL 基础上简化的产物，但功能太弱，缺少类型系统，处理不了 PDP-11 的硬件特性。
+
+Dennis 在 B 的基础上设计了 **C 语言**：
+
+- 加入了数据类型系统
+- 支持结构体，可以描述复杂数据
+- 兼顾高级语言的可读性与底层操控能力
+- 指针让程序员能直接操作内存
+
+<Aside type="caution" title="C 的双刃剑">
+C 语言赋予了程序员极大的控制权，同时也带来了极大的风险——缓冲区溢出、野指针、内存泄漏，几乎所有经典安全漏洞都与 C 的这种"自由"有关。这是 Dennis 自己也承认的设计代价。
+</Aside>
+
+1978 年，Dennis 与 Brian Kernighan 合著 ***The C Programming Language***，俗称"K&R 圣经"。这本书被译成 20 种语言，影响了整整一代计算机科学教育。
+
+C 语言的谱系极为庞大：C++ 、Java、C#、Objective-C、Go、Rust——都直接或间接脱胎于此。
+
+---
+
+## 四、荣誉：图灵奖、国家技术奖章，和一个奇怪的对比
+
+| 年份 | 荣誉 |
+|------|------|
+| 1983 | ACM 图灵奖（与 Ken Thompson 共同获得） |
+| 1988 | 当选美国国家工程院院士 |
+| 1998 | 美国国家技术奖章（克林顿总统颁发） |
+| 1999 | 入选 Computer History Museum 名人堂 |
+
+图灵奖的颁奖词写得极为简洁：
+> "为通用操作系统理论的发展，以及 Unix 操作系统的具体实现。"
+
+<Aside type="tip" title="一个有趣的现实对比">
+乔布斯在 1985 年离开苹果时，收到了同一届的国家技术奖章。颁奖台上，站着两个截然不同的人：一个是全球最知名的科技明星，另一个是几乎所有人都不认识的 Dennis Ritchie。
+</Aside>
+
+---
+
+## 五、晚年：低调的 Plan 9 与 Inferno
+
+退出 Unix 主战场后，Dennis 并未停下。他在 Bell Labs 继续领导团队，开发了两个继承 Unix 哲学的后继系统：
+
+- **Plan 9**（1995）：分布式操作系统，把"一切皆文件"的理念推向极致，网络资源也以文件形式统一访问
+- **Inferno**（1996）：面向网络时代的轻量级系统，配套了 **Limbo** 语言
+
+这两个项目在商业上影响有限，但 Plan 9 的很多思想后来渗透进了 Linux 和 Go 语言的设计中。
+
+2007 年，他从 Bell Labs 退休。此后几乎从公众视野中消失，没有社交媒体，没有公开演讲。
+
+---
+
+## 六、离世：几乎无人知晓的结局
+
+2011 年 10 月 12 日，Dennis Ritchie 在新泽西家中独自离世，享年 70 岁。
+
+他的前同事、Google 工程师 **Rob Pike** 最先在 Google+ 上发出消息。Bell Labs 随后确认，但拒绝透露死因和具体日期——他的家人甚至难以联系到。
+
+<Aside type="danger" title="世界的沉默">
+他去世的时间，比乔布斯晚了整整 **11 天**。  
+乔布斯的离世震动了全球，头版头条、万人悼念。  
+Dennis Ritchie 的消息，在科技圈以外几乎无人知晓。  
+而没有 Dennis，乔布斯赖以建立帝国的 macOS 和 iOS，根本不会存在——它们的内核 Darwin，正是 Unix 的直系后代。
+</Aside>
+
+---
+
+## 七、遗产：你每天都在用，但你不知道他的名字
+
+| 他的创造 | 今天的影响 |
+|----------|-----------|
+| C 语言 | Linux 内核、Windows 内核、Python 解释器、几乎所有底层系统 |
+| Unix | macOS、iOS（Darwin 内核）、Android（Linux 内核）、所有服务器 |
+| K&R 圣经 | 影响了数十年的计算机科学教育 |
+| "一切皆文件"哲学 | Unix/Linux 的核心设计原则，沿用至今 |
+
+---
+
+## 结语
+
+Dennis Ritchie 没有创业，没有 IPO，没有发布会，没有粉丝。
+
+他在 Bell Labs 的一间普通办公室里，和一群聪明的同事，写出了两样东西，然后把它们交给了世界。
+
+他去世的时候，世界几乎没有注意到。
+
+但只要还有人在用电脑、手机、服务器——只要代码还在运行——他就还在那里。
+
+> "Unix 是简单的。只是需要天才才能理解那种简单。"
+> — Dennis Ritchie
+
+---
+
+`#C语言` `#Unix` `#程序员人物` `#计算机历史` `#Bell Labs`

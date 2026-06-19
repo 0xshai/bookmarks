@@ -456,3 +456,6 @@ print("hello")
 ```
 
 > 注意：部分平台（如微信）不支持 HTML 混用，Obsidian / GitHub / Hugo 均支持。
+
+### Starlight文档
+<a href="https://starlight.astro.build/zh-cn/" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href); return false;">Starlight 文档</a>

@@ -32,9 +32,14 @@ export default defineConfig({
         {
           label: "牛人故事",
           items: [
+            { label: "Brendan Eich：JS 之父", slug: "people/brendan-eich" },
             {
-              label: "Brendan Eich：JS 之父",
-              slug: "people/brendan-eich",
+              label: "Dennis Ritchie：C 语言之父",
+              slug: "people/dennis-ritchie",
+            },
+            {
+              label: "Fabrice Bellard：重写互联网底层",
+              slug: "people/fabrice-bellard",
             },
           ],
         },
