@@ -391,6 +391,53 @@ export const bookmarks: Category[] = [
     ],
   },
   {
+    category: "隐私安全",
+    items: [
+      {
+        name: "Cryptomator",
+        url: "https://cryptomator.org",
+        desc: "开源文件加密工具，上传云盘前本地加密，服务商无法获取真实内容",
+        opensource: true,
+      },
+      {
+        name: "VeraCrypt",
+        url: "https://www.veracrypt.fr",
+        desc: "开源磁盘加密工具，支持分区加密、虚拟加密容器及系统盘加密",
+        opensource: true,
+      },
+      {
+        name: "ExifTool",
+        url: "https://exiftool.org",
+        desc: "查看和清除图片、视频的 EXIF 元数据，防止位置等隐私信息泄露",
+        opensource: true,
+      },
+      {
+        name: "MAT2",
+        url: "https://0xacab.org/jvoisin/mat2",
+        desc: "批量清除文件元数据，支持 PDF、Office、图片、音频等多种格式",
+        opensource: true,
+      },
+      {
+        name: "QuickHash GUI",
+        url: "https://www.quickhash-gui.org",
+        desc: "开源文件哈希校验工具，支持 MD5、SHA256 等算法，用于验证文件完整性",
+        opensource: true,
+      },
+      {
+        name: "blind_watermark",
+        url: "https://github.com/guofei9987/blind_watermark",
+        desc: "Python 盲水印库，给图片嵌入肉眼不可见的水印，用于版权保护与内容溯源",
+        opensource: true,
+      },
+      {
+        name: "text_blind_watermark",
+        url: "https://github.com/guofei9987/text_blind_watermark",
+        desc: "Python 文本盲水印库，给文字内容嵌入不可见水印，用于版权保护与泄露溯源",
+        opensource: true,
+      },
+    ],
+  },
+  {
     category: "加密云盘",
     icon: "☁️",
     items: [
