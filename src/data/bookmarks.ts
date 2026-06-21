@@ -105,6 +105,18 @@ export const bookmarks: Category[] = [
         desc: "开源多线程下载加速，速度最高提升500%",
         opensource: true,
       },
+      {
+        name: "yt-dlp",
+        url: "https://github.com/yt-dlp/yt-dlp",
+        desc: "功能强大的开源视频下载工具，支持 YouTube、Bilibili 等数千个网站",
+        opensource: true,
+      },
+      {
+        name: "Gopeed",
+        url: "https://gopeed.com",
+        desc: "现代开源下载管理器，支持 HTTP、BT、磁力、ed2k，全平台可用，支持扩展",
+        opensource: true,
+      },
     ],
   },
   {
