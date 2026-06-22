@@ -50,6 +50,10 @@ export default defineConfig({
               label: "自选安装路径",
               slug: "tinkering/custom-installation-path",
             },
+            {
+              label: "WSL2 跑 Docker，顺手装了 Immich",
+              slug: "tinkering/wsl2-docker-immich",
+            },
           ],
         },
         {

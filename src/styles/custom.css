@@ -298,6 +298,7 @@ starlight-toc a[href="#_top"] {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    padding-bottom: 2px;
 }
 
 /* 浮窗：默认显示，JS 判断不溢出时隐藏 */
