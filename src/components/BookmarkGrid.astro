@@ -4,7 +4,7 @@ import {
   Code2, Globe, Image, Download, Video, Play, Pencil, Settings,
   Languages, RefreshCw, Keyboard, Mail, Lock, KeyRound, FileText,
   NotebookPen, Cloud, Zap, BookOpen, Cpu, Brain, BarChart2, Shield,
-  Server, Network
+  Server, Network, Monitor
 } from 'lucide-astro';
 
 const { category } = Astro.props;
@@ -21,6 +21,7 @@ const iconMap: Record<string, any> = {
   '设计': Pencil,
   '系统工具': Settings,
   '自托管': Server,
+  '网站工具': Monitor,
   '网络工具': Network,
   '翻译工具': Languages,
   '文件同步': RefreshCw,
@@ -50,6 +51,7 @@ const colorMap: Record<string, string> = {
   '系统工具': '#64748b',
   '自托管': '#0f766e',
   '网络工具': '#0ea5e9',
+  '网站工具': '#10b981',
   '翻译工具': '#06b6d4',
   '文件同步': '#84cc16',
   '输入法': '#f97316',
