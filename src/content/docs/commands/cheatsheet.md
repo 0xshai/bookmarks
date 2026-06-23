@@ -36,6 +36,7 @@ pnpm config set pmOnFail ignore
 再重新运行 `pnpm dev`。
 ### 推送更新到 GitHub
 ```powershell
+git pull --rebase origin main
 git add .
 git commit -m "描述改动内容"
 git push origin main

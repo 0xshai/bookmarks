@@ -37,6 +37,7 @@ export default defineConfig({
             { label: "LosslessCut 无损视频剪辑", slug: "tools/losslesscut" },
             { label: "Voicebox 本地开源语音工作室", slug: "tools/voicebox" },
             { label: "yt-dlp 视频下载工具", slug: "tools/yt-dlp" },
+            { label: "ShareX 完全指南", slug: "tools/sharex-guide" },
           ],
         },
         {
