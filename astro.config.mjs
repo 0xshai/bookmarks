@@ -8,6 +8,14 @@ export default defineConfig({
       title: "闪光小破站",
       head: [
         {
+          tag: "link",
+          attrs: {
+            rel: "icon",
+            type: "image/svg+xml",
+            href: "/favicon.svg",
+          },
+        },
+        {
           tag: "script",
           attrs: {
             defer: true,
@@ -53,7 +61,7 @@ export default defineConfig({
               slug: "tinkering/custom-installation-path",
             },
             {
-              label: "WSL2 跑 Docker，顺手装了 Immich",
+              label: "WSL2跑Docker，顺手装了Immich",
               slug: "tinkering/wsl2-docker-immich",
             },
             {
