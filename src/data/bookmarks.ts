@@ -595,6 +595,12 @@ export const bookmarks: Category[] = [
         opensource: true,
       },
       {
+        name: "小企鹅输入法",
+        url: "https://github.com/fcitx5-android/fcitx5-android",
+        desc: "Fcitx5 输入法框架的 Android 移植版，支持拼音、RIME 等多种输入方案，无广告无遥测，可从 F-Droid 或 Google Play 安装",
+        opensource: true,
+      },
+      {
         name: "清风输入法",
         url: "https://huanfeng.github.io/WindInput/",
         desc: "简洁轻量的输入法",

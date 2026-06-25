@@ -95,6 +95,10 @@ export default defineConfig({
               label: "Moxie Marlinspike：给世界造了把锁",
               slug: "people/moxie-marlinspike",
             },
+            {
+              label: "小企鹅的二十年",
+              slug: "people/fcitx-story",
+            },
           ],
         },
       ],
