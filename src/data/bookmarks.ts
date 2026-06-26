@@ -253,12 +253,6 @@ export const bookmarks: Category[] = [
         opensource: true,
       },
       {
-        name: "Flameshot",
-        url: "https://flameshot.org",
-        desc: "跨平台开源截图工具，支持标注与上传",
-        opensource: true,
-      },
-      {
         name: "Scoop",
         url: "https://scoop.sh",
         desc: "Windows 命令行包管理器",

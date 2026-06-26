@@ -93,20 +93,6 @@ pnpm dev
 
 ## 网站维护
 
-### 强制清除缓存重启
-
-```powershell
-Remove-Item -Recurse -Force .astro, node_modules/.cache -ErrorAction SilentlyContinue
-pnpm dev
-```
-
-### 重新生成 lockfile（依赖出问题时）
-
-```powershell
-Remove-Item pnpm-lock.yaml
-pnpm install
-```
-
 ### 新电脑克隆仓库
 
 <Steps>
@@ -280,6 +266,52 @@ ffmpeg -i 输入.mp4 -vn -acodec copy 输出.aac                           # 提
 ```powershell
 HandBrakeCLI -i 输入.mp4 -o 输出.mp4 --encoder svt_av1 --quality 30 --encoder-preset 6
 ```
+
+---
+
+## Windows 快捷键
+
+### 截图与录屏
+
+| 快捷键 | 功能 |
+|---|---|
+| `Win + Shift + S` | 区域截图（截后点通知可标注） |
+| `PrtScn` | 全屏截图到剪贴板 |
+| `Win + PrtScn` | 全屏截图自动保存到图片文件夹 |
+| `Win + G` | 打开 Xbox Game Bar |
+| `Win + Alt + R` | 开始/停止录制当前窗口 |
+
+### 窗口管理
+
+| 快捷键 | 功能 |
+|---|---|
+| `Win + ←/→` | 窗口贴左/右半屏 |
+| `Win + ↑` | 窗口最大化 |
+| `Win + ↓` | 还原/最小化窗口 |
+| `Win + D` | 显示桌面 |
+| `Win + Tab` | 任务视图（所有虚拟桌面） |
+| `Alt + Tab` | 切换窗口 |
+| `Win + Ctrl + ←/→` | 切换虚拟桌面 |
+
+### 文件资源管理器
+
+| 快捷键 | 功能 |
+|---|---|
+| `Win + E` | 打开文件资源管理器 |
+| `Alt + ←/→` | 后退/前进 |
+| `Alt + ↑` | 返回上级目录 |
+| `F2` | 重命名 |
+| `Ctrl + Shift + N` | 新建文件夹 |
+
+### 系统
+
+| 快捷键 | 功能 |
+|---|---|
+| `Win + L` | 锁屏 |
+| `Win + I` | 打开设置 |
+| `Win + V` | 剪贴板历史 |
+| `Win + .` | 表情符号面板 |
+| `Ctrl + Shift + Esc` | 直接打开任务管理器 |
 
 ---
 
