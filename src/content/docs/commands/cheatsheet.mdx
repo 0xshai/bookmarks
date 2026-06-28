@@ -202,6 +202,45 @@ git config --global --unset https.proxy
 端口号按实际代理软件填写：Clash 7890，V2rayN 10809。永久生效请写入 `$PROFILE`。
 </Aside>
 
+### 断网修复
+
+右键管理员运行以下脚本，或提前保存为 `fix-network.bat` 放到桌面备用：
+
+```bat
+@echo off
+echo 正在修复网络...
+
+echo [1/5] 释放 IP 地址...
+ipconfig /release
+
+echo [2/5] 清除 DNS 缓存...
+ipconfig /flushdns
+
+echo [3/5] 重新获取 IP 地址...
+ipconfig /renew
+
+echo [4/5] 重置 Winsock...
+netsh winsock reset
+
+echo [5/5] 重置 TCP/IP 协议栈...
+netsh int ip reset
+
+echo.
+echo 修复完成，请重启电脑。
+pause
+```
+
+修复前后可用以下命令测试网络连通性：
+
+```powershell
+ping 8.8.8.8      # 测试网络是否通（不依赖 DNS）
+ping github.com   # 测试 DNS 解析是否正常
+```
+
+<Aside type="caution">
+如果 `ping github.com` 解析到 `127.0.0.1`，说明 hosts 文件被修改（如 Watt Toolkit 加速导致），需关闭相关加速工具或手动清理 `C:\Windows\System32\drivers\etc\hosts`。
+</Aside>
+
 ### 文件操作
 
 ```powershell

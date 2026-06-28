@@ -517,6 +517,12 @@ export const bookmarks: Category[] = [
         desc: "批量清除文件元数据，支持 PDF、Office、图片、音频等多种格式",
         opensource: true,
       },
+      {
+        name: "Fort Firewall",
+        url: "https://github.com/tnodir/fort",
+        desc: "Windows 开源防火墙，按应用精细控制出站流量，支持限速与流量统计",
+        opensource: true,
+      },
     ],
   },
   {
