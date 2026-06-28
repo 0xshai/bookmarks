@@ -49,6 +49,7 @@ export default defineConfig({
             { label: "MarkItDown 使用说明", slug: "tools/markitdown" },
             { label: "WinUtil Windows优化工具", slug: "tools/winutil" },
             { label: "ExifTool 使用指南", slug: "tools/exiftool-guide" },
+            { label: "MAT2 元数据清除工具", slug: "tools/mat2" },
           ],
         },
         {

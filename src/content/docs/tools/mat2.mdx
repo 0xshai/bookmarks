@@ -1,0 +1,198 @@
+---
+title: MAT2 元数据清除工具
+description: 在 WSL 环境下使用 MAT2 批量清除文件元数据，保护隐私
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+每张照片背后都藏着你不知道的信息。相机型号、镜头参数、拍摄时间、时区设置，甚至快门总次数——这些数据统称**元数据**，默认嵌入在文件里，直接发出去对方都能看到。
+
+MAT2（Metadata Anonymisation Toolkit 2）是一个专门清除文件元数据的开源命令行工具，支持 JPEG、PNG、PDF、MP3、MP4、DOCX 等几十种格式。
+
+<Aside type="note">
+MAT2 只能在 Linux 环境下运行。Windows 用户需要先安装 WSL，本文以 Ubuntu 为例。
+</Aside>
+
+## 安装 WSL
+
+如果还没有 WSL，在 PowerShell 里运行：
+
+```powershell
+wsl --install -d Ubuntu
+```
+
+安装完成后设置用户名和密码，以后输入 `wsl` 即可进入 Ubuntu 环境，输入 `exit` 退出回到 PowerShell。
+
+<Aside type="tip">
+Rancher Desktop 会自动开启 WSL 功能，但它自带的发行版不能直接用，还是需要单独安装 Ubuntu。
+</Aside>
+
+## 安装 MAT2
+
+进入 WSL 后，先更新包列表：
+
+```bash
+sudo apt update
+```
+
+安装 MAT2 及其依赖：
+
+```bash
+sudo apt install -y python3-pip cmake pkg-config libcairo2-dev python3-dev
+pip install mat2 --break-system-packages
+```
+
+将 MAT2 的安装路径加入 PATH：
+
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+<Aside type="tip">
+要让这个设置永久生效，把上面这行加到 `~/.bashrc` 文件末尾。
+</Aside>
+
+补全可选依赖，以支持 PDF、SVG 和更多图片格式：
+
+```bash
+sudo apt install -y python3-gi gir1.2-poppler-0.18 gir1.2-gdkpixbuf-2.0 gir1.2-rsvg-2.0 exiftool
+```
+
+验证安装：
+
+```bash
+mat2 --version
+```
+
+无报错即安装成功。
+
+## 基本用法
+
+### 查看元数据
+
+清除之前，先看看文件里藏了什么：
+
+```bash
+mat2 -s 照片.jpg
+```
+
+以一张 Nikon D750 拍摄的照片为例，输出包含相机型号、镜头、拍摄时间、序列号、快门次数等上百条信息，直接发出去对方一览无余。
+
+### 清除元数据
+
+```bash
+mat2 照片.jpg
+```
+
+MAT2 不修改原文件，而是生成一个新文件 `照片.cleaned.jpg`，原文件保持不变。
+
+清除完成后验证：
+
+```bash
+mat2 -s 照片.cleaned.jpg
+# No metadata found in 照片.cleaned.jpg.
+```
+
+### 批量清除
+
+清除当前目录下所有 JPEG 文件：
+
+```bash
+mat2 *.jpg
+```
+
+混合格式也可以一起处理：
+
+```bash
+mat2 *.jpg *.png *.pdf
+```
+
+## 处理 Windows 盘上的文件
+
+<Aside type="caution">
+MAT2 无法直接处理 Windows NTFS 分区上的文件（`/mnt/c`、`/mnt/d` 等），会报权限错误。需要先复制到 Linux 目录再处理。
+</Aside>
+
+正确流程：
+
+```bash
+# 1. 把文件复制到 Linux 主目录
+cp /mnt/g/照片.jpg ~/
+
+# 2. 进入主目录处理
+cd ~
+mat2 照片.jpg
+
+# 3. 处理完复制回 Windows
+cp ~/照片.cleaned.jpg /mnt/g/
+```
+
+批量处理也一样，先整批复制进来再处理：
+
+```bash
+# 1. 建一个临时目录，批量复制
+mkdir ~/tmp
+cp /mnt/g/*.JPG ~/tmp/
+
+# 2. 批量处理
+cd ~/tmp
+mat2 *.JPG
+
+# 3. 只把 cleaned 文件复制回 Windows
+cp ~/tmp/*.cleaned.JPG /mnt/g/cleaned/
+```
+
+<Aside type="caution">
+文件数量多、体积大时，来回复制耗时较长。如果只需要处理图片，Windows 上的 ExifTool 更省事，不需要 WSL 也不需要复制文件。
+</Aside>
+
+Windows 各盘符在 WSL 里的路径对应关系：
+
+| Windows | WSL |
+|---------|-----|
+| C:\ | /mnt/c |
+| D:\ | /mnt/d |
+| G:\ | /mnt/g |
+| H:\ | /mnt/h |
+
+## MAT2 vs ExifTool
+
+两个工具都能清元数据，适用场景不同：
+
+| | MAT2 | ExifTool |
+|--|------|----------|
+| 运行环境 | Linux / WSL | Windows 原生 |
+| 支持格式 | PDF、Office、音频、视频、图片等 | 主要是图片和视频 |
+| 处理彻底程度 | 更彻底 | 够用 |
+| 使用门槛 | 需要 WSL | 直接用 |
+| 批量处理 | 支持 | 支持 |
+
+简单来说：**平时处理图片用 ExifTool，需要清除 PDF、Word、音频等复杂格式时用 MAT2。**
+
+## 常用参数
+
+| 参数 | 说明 |
+|------|------|
+| `-s` | 查看元数据，不清除 |
+| `-l` | 列出所有支持的文件格式 |
+| `-v` | 显示详细处理信息 |
+| `--unknown-members abort` | 遇到未知字段时中止（默认） |
+| `--unknown-members omit` | 跳过未知字段继续处理 |
+
+## 支持格式
+
+```bash
+mat2 -l
+```
+
+包括但不限于：JPEG、PNG、GIF、TIFF、BMP、SVG、PDF、MP3、MP4、AVI、FLAC、OGG、EPUB、DOCX、XLSX、PPTX、ODT、ZIP、TAR 等。
+
+## 注意事项
+
+MAT2 只清除元数据，不处理以下情况：
+
+- 文件内容本身包含的隐私信息
+- 水印和隐写术（steganography）
+- 自定义或非标准元数据字段
+
+如果对安全要求极高，MAT2 官方建议直接使用不含元数据的文件格式，或使用纯文本。

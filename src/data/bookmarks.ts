@@ -513,8 +513,8 @@ export const bookmarks: Category[] = [
       },
       {
         name: "MAT2",
-        url: "https://0xacab.org/jvoisin/mat2",
-        desc: "批量清除文件元数据，支持 PDF、Office、图片、音频等多种格式",
+        url: "https://github.com/jvoisin/mat2",
+        desc: "批量清除文件元数据，支持 PDF、Office、图片、音频等多种格式，需在 Linux/WSL 下使用",
         opensource: true,
       },
     ],
