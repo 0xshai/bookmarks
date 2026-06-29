@@ -126,6 +126,18 @@ export const bookmarks: Category[] = [
     ],
   },
   {
+    category: "应用商店",
+    icon: "🛍️",
+    items: [
+      {
+        name: "Komi Store",
+        url: "https://github.com/kurikomi-labs/komi-store",
+        desc: "开源跨平台应用商店，聚合 GitHub/Codeberg 上的开发者发布，支持一键安装与自动更新",
+        opensource: true,
+      },
+    ],
+  },
+  {
     category: "视频处理",
     icon: "🎬",
     items: [
