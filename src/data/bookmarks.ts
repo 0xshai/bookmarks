@@ -45,6 +45,12 @@ export const bookmarks: Category[] = [
         desc: "微软出品，将 PDF、Word、PPT、图片、音频等批量转换为 Markdown",
         opensource: true,
       },
+      {
+        name: "fuck-u-code",
+        url: "https://github.com/Done-0/fuck-u-code",
+        desc: "代码质量检测工具，离线分析复杂度/重复度/命名等七项指标并打分，支持接入 AI 做代码审查",
+        opensource: true,
+      },
     ],
   },
   {
